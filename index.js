@@ -1,59 +1,63 @@
 // Nullish Coalescing Operator
+
 // const idade = 0;
 
-// document.body.innerHTML = 'Sua idade é: ' + (idade ?? 'Idade não informada');
+// 0, '', [], false, undefined, null => falsy
 
+// document.body.innerText = 'Sua idade é: ' + (idade || 'Idade não informada');
+// document.body.innerText = 'Sua idade é: ' + (idade ?? 'Idade não informada');
+// O operador ?? é mais restritivo do que o operador ||
 
 
 // Objeto
-// const user = {
-//     name: 'Wiliamis',
-//     idade: 25,   
-//     adress: {
-//         street: 'Rua teste',
-//         number: 175
-//     },
-// };
+const user = {
+    name: 'Wiliamis',
+    nickname: 'Sampaio',
+    idade: 26,
+    address: {
+        street: 'Rua teste',
+        number: 1105
+    }
+}
 
 
+// const { address } = user;  
 
-// document.body.innerText = JSON.stringify(user);
+// document.body.innerText = JSON.stringify(address);   
+// document.body.innerHTML = JSON.stringify(Object.keys(user))
 // document.body.innerHTML = JSON.stringify(Object.values(user))
 
-// JSON.stringify() =serve para ler objetos em tela
-// Object.keys('nome do objeto') = retorna as chaves do meu objeto
-// Object.values('nome do objeto') = retorna os valores do meu objeto
-// Object.entries('nome do objeto') = retorna vetores
+// JSON.stringify() = transform o objeto JS em uma string (JSON) e depois mostrar na tela
+// Object.keys(Nome do objeto) = retorna as chaves do meu objeto
+// Object.values(Nome do objeto) = retorna os valores do meu objeto
+// Object.entries(user)); = retorna os vetores do meu objeto
 
 
 
+// DESESTRUTURAÇÃO
+const { address, idade: age, nickname = 'Oliveira' } = user;
 
+// document.body.innerText = JSON.stringify({ address });
 
-// Desestruturação
-
-// const { adress } = user;
-
-// document.body.innerText = JSON.stringify({  adress });
-
-// function mostraIdade(user) {
-//     return user.idade;
+// function mostraIdade({ name, idade, address  }) {
+//     return name, idade, address;
 // }
 
-// document.body.innerText = mostraIdade(user);
-
-
+document.body.innerText = JSON.stringify({ address, age, nickname });
 
 
 
 
 // Rest operator
+// const { ...rest } = user;
 
 // const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// const [first, second, ...rest] = array;
 
-// // const { name, ...rest } = user;
+// const first = array[0];
+// const second = array[1];
+// const third = array[2];
 
-// document.body.innerText = JSON.stringify( {first, second, rest} );
+// document.body.innerText = JSON.stringify(third); 
 
 
 
@@ -101,7 +105,7 @@
 
 // Métodos de array
 
-const array = [1, 2, 3, 4, 5];
+// const array = [1, 2, 3, 4, 5];
 
 
 // for (const i of array) {
@@ -109,7 +113,7 @@ const array = [1, 2, 3, 4, 5];
 // }
 
 // array.forEach(item => {
-//     document.body.innerText += item; 
+//     document.body.innerText += item;
 // })
 
 
@@ -135,18 +139,18 @@ const array = [1, 2, 3, 4, 5];
 
 
 // every
- const todosItensSaoNumeros = array.every(item => {
-    return typeof item === 'number';
-});
+//  const todosItensSaoNumeros = array.every(item => {
+//     return typeof item === 'number';
+// });
 //  document.body.innerText = JSON.stringify(todosItensSaoNumeros)
 
 
 
 
  // some
- const pelosMenosUmItemNaoEUmNumero = array.some(item => {
-    return typeof item !== 'number'; 
-});
+//  const pelosMenosUmItemNaoEUmNumero = array.some(item => {
+//     return typeof item !== 'number';
+// });
 //  document.body.innerText = JSON.stringify(todosItensSaoNumeros)
 
 
@@ -158,15 +162,15 @@ const array = [1, 2, 3, 4, 5];
 
 
 // findIndex = encontra o index do array e não o valor
- const par = array.findIndex(item => item % 2 === 0);
+//  const par = array.findIndex(item => item % 2 === 0);
 //  document.body.innerText = JSON.stringify(par);
 
 
 // reduce = criar algo novo
-const soma = array.reduce((acc, item) => {
+// const soma = array.reduce((acc, item) => {
     // document.body.innerText += acc + ',' + item + ' --- ';
-    return acc + item;
-}, 0);
+//     return acc + item;
+// }, 0);
 
 //  document.body.innerText = JSON.stringify(soma);
 
@@ -178,8 +182,8 @@ const soma = array.reduce((acc, item) => {
 
 // Templates Literalsb = tagged template
 
-const name = null;
-const message = `Bem-vindo, ${name ? name :  'visitante'}`;
+// const name = null;
+// const message = `Bem-vindo, ${name ? name :  'visitante'}`;
 
 // document.body.innerText = message;
 
@@ -187,6 +191,3 @@ const message = `Bem-vindo, ${name ? name :  'visitante'}`;
 
 
 // Promisses
-
-
- 
