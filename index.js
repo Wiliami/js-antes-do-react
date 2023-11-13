@@ -10,15 +10,15 @@
 
 
 // Objeto
-const user = {
-    name: 'Wiliamis',
-    nickname: 'Sampaio',
-    idade: 26,
-    address: {
-        street: 'Rua teste',
-        number: 1105
-    }
-}
+// const user = {
+//     name: 'Wiliamis',
+//     nickname: 'Sampaio',
+//     idade: 26,
+//     address: {
+//         street: 'Rua teste',
+//         number: 1105
+//     }
+// }
 
 
 // const { address } = user;  
@@ -35,7 +35,7 @@ const user = {
 
 
 // DESESTRUTURAÇÃO
-const { address, idade: age, nickname = 'Oliveira' } = user;
+// const { address, idade: age, nickname = 'Oliveira' } = user;
 
 // document.body.innerText = JSON.stringify({ address });
 
@@ -43,7 +43,7 @@ const { address, idade: age, nickname = 'Oliveira' } = user;
 //     return name, idade, address;
 // }
 
-document.body.innerText = JSON.stringify({ address, age, nickname });
+// document.body.innerText = JSON.stringify({ address, age, nickname });
 
 
 
@@ -76,9 +76,6 @@ document.body.innerText = JSON.stringify({ address, age, nickname });
 // }
 
 // document.body.innerText = JSON.stringify(user)
-
-
-
 
 
 // Optional Chaining = ? antes da propriedade que não pode vir a existir
@@ -180,7 +177,7 @@ document.body.innerText = JSON.stringify({ address, age, nickname });
 
 
 
-// Templates Literalsb = tagged template
+// Templates Literals = tagged template
 
 // const name = null;
 // const message = `Bem-vindo, ${name ? name :  'visitante'}`;
